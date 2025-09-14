@@ -1,9 +1,9 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'constant.dart' as constant;
+import 'constant.dart';
 
 class Storage {
   static const _storage = FlutterSecureStorage();
-  static const _key = 'jwt_token';
+  static final _key = Constant.jwtToken;
 
   /// Saves the provided authentication token to persistent storage.
   ///

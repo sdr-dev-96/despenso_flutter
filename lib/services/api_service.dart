@@ -1,10 +1,10 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../models/expense.dart';
-import '../utils/constant.dart' as constant;
+import '../utils/constant.dart';
 
 class ApiService {
-  static const baseUrl = 'http://127.0.0.1:8000/api';
+  static final baseUrl = Constant.apiUrl;
 
   /// Authenticates a user with the provided [email] and [password].
   ///
