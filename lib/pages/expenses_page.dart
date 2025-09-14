@@ -45,7 +45,7 @@ class _ExpensesPageState extends State<ExpensesPage> {
     final auth = Provider.of<AuthService>(context);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Expenses'),
+        title: const Text('Mes Dépenses'),
         actions: [
           IconButton(
               icon: const Icon(Icons.logout), onPressed: () => auth.logout()),
@@ -57,13 +57,26 @@ class _ExpensesPageState extends State<ExpensesPage> {
           children: [
             TextField(
                 controller: titleController,
-                decoration: const InputDecoration(labelText: 'Title')),
+                decoration: const InputDecoration(labelText: 'Titre')),
             TextField(
                 controller: amountController,
-                decoration: const InputDecoration(labelText: 'Amount'),
+                decoration: const InputDecoration(labelText: 'Montant'),
                 keyboardType: TextInputType.number),
-            ElevatedButton(
-                onPressed: addExpense, child: const Text('Add Expense')),
+            const SizedBox(height: 24),
+            SizedBox(
+              width: double.infinity,
+              height: 50,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xFF27AE60),
+                  foregroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12)),
+                ),
+                onPressed: addExpense,
+                child: const Text('Ajouter une dépense'),
+              ),
+            ),
             const SizedBox(height: 20),
             Expanded(
               child: ListView.builder(
