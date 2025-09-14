@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../models/expense.dart';
+import '../utils/constant.dart' as constant;
 
 class ApiService {
   static const baseUrl = 'http://127.0.0.1:8000/api';
@@ -43,9 +44,9 @@ class ApiService {
   /// Adds a new expense to the server.
   ///
   /// Takes an authentication [token] and an [expense] object to be added.
-  /// 
+  ///
   /// Returns `true` if the expense was successfully added, otherwise `false`.
-  /// 
+  ///
   /// Throws an exception if the request fails.
   static Future<bool> addExpense(String token, Expense expense) async {
     final response = await http.post(
